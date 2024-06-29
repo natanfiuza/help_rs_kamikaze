@@ -7,14 +7,14 @@
 @stop
 
 @section('content')
-    <form action="{{ route('user.update' , $usuario->id) }}" method="post" enctype="multipart/form-data">
-        @method('PUT')
+    <form action="{{ route('user.store') }}" method="post" enctype="multipart/form-data">
+        @method('POST')
         @csrf
         <div class="card">
             <div class="card-body">
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Alterar: {{$usuario->name}}</h3>
+                        <h3 class="card-title">{{__('Registration data')}}</h3>
                         <div class="card-tools">
                             <button type="button" class="btn btn-tool" data-card-widget="collapse"
                                 title="{{ __('Collapse') }}">
@@ -34,7 +34,7 @@
                             </div>
                         @endif
                         <x-adminlte-input name="name" label="{{ __('Name') }}" placeholder="{{ __('Name') }}"
-                            value="{{old('name') ?? $usuario->name}}" label-class="">
+                            value="{{old('name')}}" label-class="">
                             <x-slot name="prependSlot">
                                 <div class="input-group-text">
                                     <i class="fas fa-user e"></i>
@@ -42,15 +42,7 @@
                             </x-slot>
                         </x-adminlte-input>
                         <x-adminlte-input name="email" label="{{ __('E-mail') }}" placeholder="{{ __('E-mail') }}"
-                            value="{{old('email') ?? $usuario->email}}" label-class="">
-                            <x-slot name="prependSlot">
-                                <div class="input-group-text">
-                                    <i class="fas fa-envelope e"></i>
-                                </div>
-                            </x-slot>
-                        </x-adminlte-input>
-                        <x-adminlte-input name="cpf" label="{{ __('CPF') }}" placeholder="{{ __('CPF') }}"
-                            value="{{old('cpf') ?? $usuario->cpf}}" label-class="">
+                            value="{{old('email')}}" label-class="">
                             <x-slot name="prependSlot">
                                 <div class="input-group-text">
                                     <i class="fas fa-envelope e"></i>
