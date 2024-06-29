@@ -3,20 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Transacoes;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
 
-class UserController extends Controller
+class ConsultaController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $consulta = User::all();
-        return view('user.index', compact('users'));
+        $consulta = Transacoes::all();
+        return view('consulta.index', compact('consulta'));
     }
 
     /**
@@ -144,5 +145,12 @@ class UserController extends Controller
     {
         $user = Auth::user();
         return view('user.profile', compact('user'));
+    }
+    public function save_transacao(Request $request) {
+
+        $client = new \GuzzleHttp\Client(['headers' => ['api-key' => 'HACKATON_UNIESP_MARJO_2024']]);
+
+        $response = $client->request('POST', 'https://hackathon.marjosports.com.br/hackathon', ['json' => ['cpf' => $request->cpf,'valor' => $request->valor ]]);
+        return response()->json(['status' => 'ok']);
     }
 }
