@@ -21,7 +21,32 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+
 Auth::routes();
+
+Route::prefix('/user')->group(function () {
+
+    Route::get('', [App\Http\Controllers\UserController::class, 'index'])->name('user.index');
+    Route::get('index', [App\Http\Controllers\UserController::class, 'index'])->name('user.index');
+    Route::get('profile', [App\Http\Controllers\UserController::class, 'profile'])->name('user.profile');
+    Route::get('create', [App\Http\Controllers\UserController::class, 'create'])->name('user.create');
+    Route::post('store', [App\Http\Controllers\UserController::class, 'store'])->name('user.store');
+    Route::get('edit/{id}', [App\Http\Controllers\UserController::class, 'edit'])->name('user.edit');
+    Route::put('update/{id}', [App\Http\Controllers\UserController::class, 'update'])->name('user.update');
+
+});
+
+Route::prefix('/consulta')->group(function () {
+
+    Route::get('', [App\Http\Controllers\UserController::class, 'index'])->name('consulta.index');
+    Route::get('index', [App\Http\Controllers\UserController::class, 'index'])->name('consulta.index');
+    Route::get('create', [App\Http\Controllers\UserController::class, 'create'])->name('consulta.create');
+    Route::post('store', [App\Http\Controllers\UserController::class, 'store'])->name('consulta.store');
+    Route::get('edit/{id}', [App\Http\Controllers\UserController::class, 'edit'])->name('consulta.edit');
+    Route::put('update/{id}', [App\Http\Controllers\UserController::class, 'update'])->name('consulta.update');
+
+});
+
 
 Route::get('/home', function() {
     return view('home');

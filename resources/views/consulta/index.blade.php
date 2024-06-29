@@ -17,10 +17,9 @@
         ];
 
 
-       // $btnDelete = '<button class="btn btn-xs btn-default text-danger mx-1 shadow" title="'.__('Delete').'">
-       //           <i class="fa fa-lg fa-fw fa-trash"></i>
-       //       </button>';
-        $btnDelete = '';
+        $btnDelete = '<button class="btn btn-xs btn-default text-danger mx-1 shadow" title="'.__('Delete').'">
+                  <i class="fa fa-lg fa-fw fa-trash"></i>
+              </button>';
         // $btnDetails = '<button class="btn btn-xs btn-default text-teal mx-1 shadow" title="'.__('Details').'">
         //            <i class="fa fa-lg fa-fw fa-eye"></i>
         //        </button>';
@@ -80,12 +79,3 @@
 
 
 @stop
-
-<x-adminlte-modal id="cadastro_transacao" title="Account Policy" size="lg" theme="teal"
-    icon="fas fa-bell" v-centered static-backdrop scrollable>
-    <div style="height:800px;">Cadastro</div>
-    <x-slot name="footerSlot">
-        <x-adminlte-button class="mr-auto" theme="success" label="Accept"/>
-        <x-adminlte-button theme="danger" label="Dismiss" data-dismiss="modal"/>
-    </x-slot>
-</x-adminlte-modal>
