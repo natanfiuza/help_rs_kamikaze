@@ -81,11 +81,3 @@
 
 @stop
 
-<x-adminlte-modal id="cadastro_transacao" title="Account Policy" size="lg" theme="teal"
-    icon="fas fa-bell" v-centered static-backdrop scrollable>
-    <div style="height:800px;">Cadastro</div>
-    <x-slot name="footerSlot">
-        <x-adminlte-button class="mr-auto" theme="success" label="Accept"/>
-        <x-adminlte-button theme="danger" label="Dismiss" data-dismiss="modal"/>
-    </x-slot>
-</x-adminlte-modal>

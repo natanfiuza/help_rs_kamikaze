@@ -38,12 +38,12 @@ Route::prefix('/user')->group(function () {
 
 Route::prefix('/consulta')->group(function () {
 
-    Route::get('', [App\Http\Controllers\UserController::class, 'index'])->name('consulta.index');
-    Route::get('index', [App\Http\Controllers\UserController::class, 'index'])->name('consulta.index');
-    Route::get('create', [App\Http\Controllers\UserController::class, 'create'])->name('consulta.create');
-    Route::post('store', [App\Http\Controllers\UserController::class, 'store'])->name('consulta.store');
-    Route::get('edit/{id}', [App\Http\Controllers\UserController::class, 'edit'])->name('consulta.edit');
-    Route::put('update/{id}', [App\Http\Controllers\UserController::class, 'update'])->name('consulta.update');
+    Route::get('', [App\Http\Controllers\ConsultaController::class, 'index'])->name('consulta.index');
+    Route::get('index', [App\Http\Controllers\ConsultaController::class, 'index'])->name('consulta.index');
+    Route::get('create', [App\Http\Controllers\ConsultaController::class, 'create'])->name('consulta.create');
+    Route::post('store', [App\Http\Controllers\ConsultaController::class, 'store'])->name('consulta.store');
+    Route::get('edit/{id}', [App\Http\Controllers\ConsultaController::class, 'edit'])->name('consulta.edit');
+    Route::put('update/{id}', [App\Http\Controllers\ConsultaController::class, 'update'])->name('consulta.update');
 
 });
 
